@@ -4,9 +4,12 @@ import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.runtime.*
+import androidx.compose.ui.unit.dp
 import com.iodroid.spaceshootercompose.common.InfiniteRepeatableSpecAnimation
+import com.iodroid.spaceshootercompose.common.createRandomList
 import com.iodroid.spaceshootercompose.model.*
 import kotlin.random.Random
+
 
 @Composable
 fun GameState(asteroidsBaseList: MutableList<BaseAsteroid>): GameModel {
@@ -25,6 +28,7 @@ fun GameState(asteroidsBaseList: MutableList<BaseAsteroid>): GameModel {
   //Create Asteroids
   val asteroidList = CreateAsteroidsListFrom(asteroidsBaseList)
   //Asteroids//
+
 
   //Create Ship
   var xPos by remember { mutableStateOf(250f) }
@@ -57,11 +61,12 @@ fun GameState(asteroidsBaseList: MutableList<BaseAsteroid>): GameModel {
 }
 
 @Composable
-private fun CreateAsteroidsListFrom(asteroidsBaseList: MutableList<BaseAsteroid>): MutableList<AsteroidModel> {
+fun CreateAsteroidsListFrom(asteroidsBaseList: MutableList<BaseAsteroid>): MutableList<AsteroidModel> {
   val asteroidList = mutableListOf<AsteroidModel>()
   for (baseAsteroid: BaseAsteroid in asteroidsBaseList) {
 
     val explosion by remember { mutableStateOf(0f) }
+
     val explosionState = remember { Animatable(initialValue = 0f) }
 
     val explosionAnimatable = remember {
@@ -96,5 +101,3 @@ private fun CreateAsteroidsListFrom(asteroidsBaseList: MutableList<BaseAsteroid>
   }
   return asteroidList
 }
-
-

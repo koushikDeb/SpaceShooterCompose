@@ -10,7 +10,7 @@ fun createRandomList(maxWidth: Dp): MutableList<BaseAsteroid> {
   for (i in 0..asteroidsNo) {
     asteroidsList.add(
       BaseAsteroid(
-        i.toLong(),
+        (i*System.currentTimeMillis()),
         (Random.nextFloat() * (maxWidth.value * 2.5f)),
         100f
       )

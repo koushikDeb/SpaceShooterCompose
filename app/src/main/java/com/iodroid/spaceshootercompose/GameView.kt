@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.input.pointer.consumeAllChanges
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.iodroid.spaceshootercompose.*
 import com.iodroid.spaceshootercompose.common.createRandomList
 import com.iodroid.spaceshootercompose.model.GameModel
@@ -29,6 +30,7 @@ fun GameView(res: Resources, maxWidth: Dp) {
       drawScope.drawAsteroid(res, gameState, asteroid)
     }
   }
+
 }
 
 
