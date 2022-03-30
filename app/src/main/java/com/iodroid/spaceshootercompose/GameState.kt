@@ -62,7 +62,6 @@ private fun CreateAsteroidsListFrom(asteroidsBaseList: MutableList<BaseAsteroid>
   for (baseAsteroid: BaseAsteroid in asteroidsBaseList) {
 
     val explosion by remember { mutableStateOf(0f) }
-
     val explosionState = remember { Animatable(initialValue = 0f) }
 
     val explosionAnimatable = remember {
